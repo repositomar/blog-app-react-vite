@@ -1,0 +1,10 @@
+http:
+  port: ${PORT:-3000}
+
+db:
+  mssql:
+    host: '${DB_HOST}'
+    port: '${DB_PORT}'
+    username: '${DB_USER_NAME}'
+    password: '${DB_POSSWORD}'
+    database: '${DATA_BASE}'

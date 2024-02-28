@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "3f637fa5-be36-4c6f-81d5-0cf0474a4bb8",
+		"name": "blog-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Este es un Titulo\",\n    \"author\": \"Rick\",\n    \"content\": \"Deberá de mostrar un listado con todas las entradas en el blog, pero del campo contenido, sólo se mostrarán los primeros setenta caracteres.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3100/entries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Entry",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Este es un Titulo\",\n    \"author\": \"Rick\",\n    \"content\": \"Deberá de mostrar un listado con todas las entradas en el blog, pero del campo contenido, sólo se mostrarán los primeros setenta caracteres.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3100/entries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"entries"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "381"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 18:14:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"messsage\": \"success\",\n    \"data\": {\n        \"title\": \"Este es un Titulo\",\n        \"author\": \"Rick\",\n        \"content\": \"Deberá de mostrar un listado con todas las entradas en el blog, pero del campo contenido, sólo se mostrarán los primeros setenta caracteres.\",\n        \"createdAt\": \"2024-02-28T18:14:51.000Z\",\n        \"updatedAt\": \"2024-02-28T18:14:51.000Z\",\n        \"id\": \"A25C433E-F36B-1410-89C2-00F6481DBE2A\",\n        \"deletedAt\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/entries?page=0&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"entries"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "search",
+							"value": "omar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all Entries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3100/entries?page=0&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"entries"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "omar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "600"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 19:18:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"messsage\": \"success\",\n    \"page\": 0,\n    \"totalRecords\": 2,\n    \"data\": [\n        {\n            \"id\": \"9E5C433E-F36B-1410-89C2-00F6481DBE2A\",\n            \"title\": \"Otro Titulo\",\n            \"author\": \"Rick\",\n            \"content\": \"Deberá de mostrar un listado con todas las entradas en el blog, pero d\",\n            \"createdAt\": \"2024-02-28T18:14:36.000Z\",\n            \"updatedAt\": \"2024-02-28T18:14:36.000Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"A25C433E-F36B-1410-89C2-00F6481DBE2A\",\n            \"title\": \"Este es un Titulo\",\n            \"author\": \"Rick\",\n            \"content\": \"Deberá de mostrar un listado con todas las entradas en el blog, pero d\",\n            \"createdAt\": \"2024-02-28T18:14:51.000Z\",\n            \"updatedAt\": \"2024-02-28T18:14:51.000Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Entry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/:entryId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						":entryId"
+					],
+					"variable": [
+						{
+							"key": "entryId",
+							"value": "9E5C433E-F36B-1410-89C2-00F6481DBE2A"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Entry",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3100/:entryId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								":entryId"
+							],
+							"variable": [
+								{
+									"key": "entryId",
+									"value": "9E5C433E-F36B-1410-89C2-00F6481DBE2A"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "375"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 19:19:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"messsage\": \"success\",\n    \"data\": {\n        \"id\": \"9E5C433E-F36B-1410-89C2-00F6481DBE2A\",\n        \"title\": \"Otro Titulo\",\n        \"author\": \"Rick\",\n        \"content\": \"Deberá de mostrar un listado con todas las entradas en el blog, pero del campo contenido, sólo se mostrarán los primeros setenta caracteres.\",\n        \"createdAt\": \"2024-02-28T18:14:36.000Z\",\n        \"updatedAt\": \"2024-02-28T18:14:36.000Z\",\n        \"deletedAt\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/:entryId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						":entryId"
+					],
+					"variable": [
+						{
+							"key": "entryId",
+							"value": "9E5C433E-F36B-1410-89C2-00F6481DBE2A"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Entry",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3100/:entryId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								":entryId"
+							],
+							"variable": [
+								{
+									"key": "entryId",
+									"value": "9E5C433E-F36B-1410-89C2-00F6481DBE2A"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Feb 2024 19:19:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"messsage\": \"success\"\n}"
+				}
+			]
+		}
+	]
+}
